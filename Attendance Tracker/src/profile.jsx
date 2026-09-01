@@ -1,15 +1,20 @@
+import { useState } from "react";
 import { UserInfo } from "./User";
+
 function Profile(props) {
-  const user = {
-    name: "Prem",
-    age: 20,
+  const [age, setAge] = useState(props.age);
+
+  const updated = (newAge) => {
+    setAge(newAge);
   };
+
   return (
     <div>
       <img src={props.image} alt="Profile" width="200" />
-      <h1>Profile</h1>
 
-      <UserInfo name={user.name} age={user.age} />
+      <h1>{props.name}</h1>
+
+      <UserInfo name={props.name} age={age} onAgeChange={updated} />
     </div>
   );
 }

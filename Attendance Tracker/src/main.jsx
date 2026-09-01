@@ -5,10 +5,41 @@ import App from "./App.jsx";
 import { Profile } from "./profile.jsx";
 import { Greeting } from "./greeting.jsx";
 
+function Parent() {
+  return (
+    <>
+      <Profile
+        image="https://i0.wp.com/picjumbo.com/wp-content/uploads/studio-artistic-portrait-of-a-relaxed-man-with-fashion-glasses-free-image.jpeg?w=600&quality=80"
+        name="BOBBY"
+        age={20}
+      />
+
+      <App />
+      <Greeting name="BOB" />
+
+      <Profile
+        image="https://i0.wp.com/picjumbo.com/wp-content/uploads/studio-artistic-portrait-of-a-relaxed-man-with-fashion-glasses-free-image.jpeg?w=600&quality=80"
+        name="JONNY"
+        age={25}
+      />
+
+      <App />
+      <Greeting name="JON" />
+
+      <Profile
+        image="https://i0.wp.com/picjumbo.com/wp-content/uploads/studio-artistic-portrait-of-a-relaxed-man-with-fashion-glasses-free-image.jpeg?w=600&quality=80"
+        name="PREM SAHITH"
+        age={30}
+      />
+
+      <App />
+      <Greeting name="PREM" />
+    </>
+  );
+}
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
-    <Greeting name="PREM" />
-    <Profile image="https://imgs.search.brave.com/oplrAcgpFkxyC59GotU0i93GoZgZHRMuTnAxpDzKl5c/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vcGljanVt/Ym8uY29tL3dwLWNv/bnRlbnQvdXBsb2Fk/cy9zdHVkaW8tYXJ0/aXN0aWMtcG9ydHJh/aXQtb2YtYS1yZWxh/eGVkLW1hbi13aXRo/LWZhc2hpb24tZ2xh/c3Nlcy1mcmVlLWlt/YWdlLmpwZWc_dz02/MDAmcXVhbGl0eT04/MA" />
+    <Parent />
   </StrictMode>,
 );

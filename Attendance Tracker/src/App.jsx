@@ -5,8 +5,8 @@ function App() {
   const [absent, setAbsent] = useState(50);
   return (
     <div>
-      <h1>Attendance Tracker</h1>
-      <p>Welcome to my React application</p>
+      <h1>Attendance</h1>
+      <p>Have a good Day</p>
       <p>Present: {present}</p>
       <p>Absent: {absent}</p>
       <button
