@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App.jsx";
 import { Profile } from "./profile.jsx";
 import { Greeting } from "./greeting.jsx";
+import { LanguageProvider } from "./LanguageContext.jsx";
 
 function Parent() {
   return (
@@ -40,6 +41,8 @@ function Parent() {
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Parent />
+    <LanguageProvider>
+      <Parent />
+    </LanguageProvider>
   </StrictMode>,
 );
