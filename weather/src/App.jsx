@@ -4,7 +4,6 @@ import ThemeContext from "./context/ThemeContext.js";
 import { getRandomWeather } from "./utils/mock.js";
 
 function App() {
-  // form fields (controlled components)
   const [city, setCity] = useState("");
   const [temperature, setTemperature] = useState("");
   const [condition, setCondition] = useState("Sunny");
@@ -12,12 +11,10 @@ function App() {
   const [windSpeed, setWindSpeed] = useState("");
   const [error, setError] = useState("");
 
-  // actual displayed weather data
   const [weatherData, setWeatherData] = useState(null);
   const [lastUpdated, setLastUpdated] = useState(null);
-  const [theme, setTheme] = useState("#4A90D9"); // default cool blue
+  const [theme, setTheme] = useState("#4A90D9");
 
-  // handle form submit
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -48,7 +45,6 @@ function App() {
     });
     setLastUpdated(new Date().toLocaleTimeString());
 
-    // clear form
     setCity("");
     setTemperature("");
     setCondition("Sunny");
@@ -56,7 +52,6 @@ function App() {
     setWindSpeed("");
   }
 
-  // auto-update every 5 seconds with random city weather
   useEffect(() => {
     const interval = setInterval(() => {
       const randomData = getRandomWeather();
@@ -64,23 +59,19 @@ function App() {
       setLastUpdated(new Date().toLocaleTimeString());
     }, 5000);
 
-    return () => clearInterval(interval); // cleanup on unmount
+    return () => clearInterval(interval);
   }, []);
 
-  // update theme color whenever temperature changes
   useEffect(() => {
     if (!weatherData) return;
 
     const temp = weatherData.temperature;
     let color;
 
-    if (temp < 20)
-      color = "#4A90D9"; // cool blue
-    else if (temp <= 30)
-      color = "#4CAF50"; // mild green
-    else if (temp <= 40)
-      color = "#FF9800"; // warm orange
-    else color = "#E53935"; // hot red
+    if (temp < 20) color = "#4A90D9";
+    else if (temp <= 30) color = "#4CAF50";
+    else if (temp <= 40) color = "#FF9800";
+    else color = "#E53935";
 
     setTheme(color);
   }, [weatherData]);
