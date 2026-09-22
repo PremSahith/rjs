@@ -8,34 +8,40 @@ import { LanguageProvider } from "./LanguageContext.jsx";
 
 function Parent() {
   return (
-    <>
-      <Profile
-        image="https://i0.wp.com/picjumbo.com/wp-content/uploads/studio-artistic-portrait-of-a-relaxed-man-with-fashion-glasses-free-image.jpeg?w=600&quality=80"
-        name="BOBBY"
-        age={20}
-      />
+    <div className="container">
+      <div className="profiles">
+        <div className="person-card">
+          <Profile
+            image="https://i0.wp.com/picjumbo.com/wp-content/uploads/studio-artistic-portrait-of-a-relaxed-man-with-fashion-glasses-free-image.jpeg?w=600&quality=80"
+            name="BOBBY"
+            age={20}
+          />
+          <Greeting name="BOB" />
+        </div>
 
-      <App />
-      <Greeting name="BOB" />
+        <div className="person-card">
+          <Profile
+            image="https://i0.wp.com/picjumbo.com/wp-content/uploads/studio-artistic-portrait-of-a-relaxed-man-with-fashion-glasses-free-image.jpeg?w=600&quality=80"
+            name="JON"
+            age={25}
+          />
+          <Greeting name="JON" />
+        </div>
 
-      <Profile
-        image="https://i0.wp.com/picjumbo.com/wp-content/uploads/studio-artistic-portrait-of-a-relaxed-man-with-fashion-glasses-free-image.jpeg?w=600&quality=80"
-        name="JONNY"
-        age={25}
-      />
+        <div className="person-card">
+          <Profile
+            image="https://i0.wp.com/picjumbo.com/wp-content/uploads/studio-artistic-portrait-of-a-relaxed-man-with-fashion-glasses-free-image.jpeg?w=600&quality=80"
+            name="PREM SAHITH"
+            age={30}
+          />
+          <Greeting name="PREM" />
+        </div>
+      </div>
 
-      <App />
-      <Greeting name="JON" />
-
-      <Profile
-        image="https://i0.wp.com/picjumbo.com/wp-content/uploads/studio-artistic-portrait-of-a-relaxed-man-with-fashion-glasses-free-image.jpeg?w=600&quality=80"
-        name="PREM SAHITH"
-        age={30}
-      />
-
-      <App />
-      <Greeting name="PREM" />
-    </>
+      <div className="app-card">
+        <App />
+      </div>
+    </div>
   );
 }
 
