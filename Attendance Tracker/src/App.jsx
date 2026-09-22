@@ -4,6 +4,9 @@ import { LanguageContext } from "./LanguageContext";
 function App() {
   const [present, setPresent] = useState(0);
   const [absent, setAbsent] = useState(50);
+
+  const [name, setName] = useState("");
+  const [submittedName, setSubmittedName] = useState("");
   const { language, setLanguage } = useContext(LanguageContext);
   return (
     <div>
@@ -25,6 +28,23 @@ function App() {
       <button onClick={() => setLanguage("hi")}>Hindi</button>
       <button onClick={() => setLanguage("ta")}>Tamil</button>
       <button onClick={() => setLanguage("es")}>Spanish</button>
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          setSubmittedName(name);
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Enter name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <button type="submit">Submit</button>
+      </form>
+      {submittedName && <p>Submitted Name: {submittedName}</p>}
     </div>
   );
 }
